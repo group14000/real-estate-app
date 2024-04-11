@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
+import { Button } from "@/components/ui/button";
 
 const MapboxAddressSearch = () => {
   const mapContainer = useRef(null);
@@ -30,9 +31,17 @@ const MapboxAddressSearch = () => {
   }, []);
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <div className="w-full h-full p-8">
-        <div ref={mapContainer} className="w-full h-full" />
+    <div className="min-h-screen flex flex-col justify-center items-center">
+      <div className="w-full max-w-screen-lg mx-auto p-8 flex flex-col items-center">
+        <div
+          ref={mapContainer}
+          className="w-full md:w-96 h-64 md:h-96 mb-4 md:mb-8"
+        />
+        <div className="w-full md:w-96 flex">
+          <Button className="p-2 border border-gray-300 rounded-r-md">
+            Next
+          </Button>
+        </div>
       </div>
     </div>
   );
