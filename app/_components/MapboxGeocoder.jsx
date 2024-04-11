@@ -20,7 +20,7 @@ const MapboxAddressSearch = () => {
     const geocoder = new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl,
-      placeholder: "Search for a place",
+      placeholder: "Search for property",
       marker: false,
     });
 
